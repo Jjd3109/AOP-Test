@@ -8,11 +8,19 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Controller {
 
-    @GetMapping("/aop")
+    @GetMapping("/v1/aop")
     @PerfLog(PageName = "PageNameTest", ActionName = "ActionNameTest", CRUDType = "SelectTest")
     public ResponseEntity<?> AopController(){
 
         return ResponseEntity.ok("success");
+    }
+
+
+    @GetMapping("/v2/aop")
+    @PerfLog(PageName = "PageNameTest2", ActionName = "ActionNameTest2", CRUDType = "SelectTes2t")
+    public ResponseEntity<?> AopTest(){
+
+        return ResponseEntity.ok("success2");
     }
 
 }
